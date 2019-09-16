@@ -59,4 +59,18 @@ public class Header {
     public Map<String, String> build() {
         return map;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        if (map != null) {
+            map.forEach((k, v) -> {
+                stringBuilder.append(k);
+                stringBuilder.append(":");
+                stringBuilder.append(v);
+                stringBuilder.append(" ");
+            });
+        }
+        return "[" + stringBuilder.substring(0, stringBuilder.length() - 1) + "]";
+    }
 }
